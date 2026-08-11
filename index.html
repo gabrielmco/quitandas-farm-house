@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1A120B">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="manifest" href="/manifest.json">
+
+  <!-- SEO -->
+  <title>Quitandas Farm House | Delivery de Doces e Caldos Artesanais - Lima Duarte MG</title>
+  <meta name="description" content="Produtos 100% artesanais em Lima Duarte MG. Doces de abóbora, doce de leite cristalizado e cremoso, caldos variados, batata recheada no pote e pão de canela. Peça pelo delivery!">
+  <meta name="keywords" content="quitandas farm house, delivery lima duarte, doces artesanais, caldos, batata recheada, pão de canela, doce de leite, doce de abóbora, minas gerais">
+  <link rel="canonical" href="https://quitandasfarmhouse.com.br/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Quitandas Farm House - Delivery">
+  <meta property="og:description" content="Produtos 100% artesanais. Doces, caldos, batata no pote e pão de canela. Faça seu pedido!">
+  <meta property="og:image" content="/img/logo.jpg">
+  <meta property="og:locale" content="pt_BR">
+
+  <!-- Fonts & CDNs Optimization -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  <link rel="preload" as="image" href="/img/products/vaca-atolada.webp">
+  <link rel="preload" as="image" href="/img/logo.webp">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="/img/logo.jpg">
+  <link rel="apple-touch-icon" href="/img/logo.jpg">
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Quitandas Farm House",
+    "image": "https://quitandasfarmhouse.com.br/img/logo.jpg",
+    "description": "Produtos 100% artesanais em Lima Duarte MG. Doces de abóbora, doce de leite cristalizado, caldos e batata recheada.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Lima Duarte",
+      "addressRegion": "MG",
+      "postalCode": "36140-000",
+      "addressCountry": "BR"
+    },
+    "telephone": "+5532984185335",
+    "servesCuisine": ["Mineira", "Artesanal", "Caldos", "Doces"],
+    "priceRange": "$$",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "17:00",
+      "closes": "22:00"
+    }
+  }
+  </script>
+
+  <!-- Anime.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" defer></script>
+
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
+
+</head>
+<body>
+  <!-- App Shell -->
+  <div id="app">
+    <!-- Loading state -->
+    <div style="display:flex;align-items:center;justify-content:center;min-height:100vh;flex-direction:column;gap:1.5rem;">
+      <img src="/img/logo.jpg" alt="Quitandas Farm House" style="width:100px;height:100px;border-radius:50%;border:3px solid #C8854C;animation:pulseGlow 2s ease-in-out infinite;">
+      <p style="color:#A89080;font-family:'Outfit',sans-serif;font-size:0.9rem;letter-spacing:0.1em;">Carregando...</p>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Main Script -->
+  <script type="module" src="/js/app.js"></script>
+
+  <!-- PWA Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        // Em desenvolvimento local, remove o Service Worker antigo para atualização instantânea
+        navigator.serviceWorker.getRegistrations().then(registrations => {
+          for (let registration of registrations) {
+            registration.unregister();
+          }
+        });
+      } else {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js');
+        });
+      }
+    }
+  </script>
+</body>
+</html>

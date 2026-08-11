@@ -1,0 +1,19 @@
+{
+  "name": "quitandas-farm-house",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Web App Delivery - Quitandas Farm House - Lima Duarte MG",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.3",
+    "vite": "^6.3.5"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.112.0"
+  }
+}

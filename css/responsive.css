@@ -1,0 +1,165 @@
+/* ============================================
+   QUITANDAS FARM HOUSE - RESPONSIVE
+   Mobile-first: 360px → 768px → 1024px
+   ============================================ */
+
+/* ── Base: Mobile (< 480px) ── */
+
+.hero-banner {
+  height: 160px;
+}
+
+.hero-card__logo {
+  width: 64px;
+  height: 64px;
+}
+
+.hero-card__title {
+  font-size: var(--fs-md);
+}
+
+/* ── Small Mobile (< 360px) ── */
+
+@media (max-width: 360px) {
+  :root {
+    --space-4: 0.875rem;
+    --fs-base: 0.875rem;
+  }
+
+  .hero-banner {
+    height: 140px;
+  }
+
+  .hero-card {
+    padding: var(--space-3);
+    gap: var(--space-3);
+  }
+
+  .hero-card__logo {
+    width: 54px;
+    height: 54px;
+  }
+
+  .cart-fab {
+    height: 50px;
+    font-size: var(--fs-sm);
+  }
+}
+
+/* ── Tablets (≥ 600px) ── */
+
+@media (min-width: 600px) {
+  .hero-banner {
+    height: 220px;
+  }
+
+  .hero-card__logo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+  }
+
+  .admin-stats {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ── Desktop (≥ 768px) ── */
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 800px;
+  }
+
+  .hero-banner {
+    height: 240px;
+  }
+
+  .hero-card__title {
+    font-size: var(--fs-xl);
+  }
+
+  .modal {
+    border-radius: var(--radius-2xl);
+    margin: auto;
+    max-height: 85vh;
+  }
+
+  .cart-drawer {
+    max-height: 80vh;
+    border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
+  }
+
+  .checkout {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .order-status {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .orders-list {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .admin-screen {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+
+/* ── Large Desktop (≥ 1024px) ── */
+
+@media (min-width: 1024px) {
+  .hero-banner {
+    height: 350px;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-4);
+  }
+
+  .admin-orders {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+  }
+
+  .admin-screen {
+    max-width: 1000px;
+  }
+}
+
+/* ── XL Desktop (≥ 1440px) ── */
+
+@media (min-width: 1440px) {
+  .admin-screen {
+    max-width: 1200px;
+  }
+
+  .admin-orders {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ── Safe Area Insets for iOS & Modern Mobile Devices ── */
+.app-header {
+  padding-top: max(var(--space-2), env(safe-area-inset-top));
+}
+
+.cart-fab {
+  bottom: max(var(--space-4), calc(var(--space-4) + env(safe-area-inset-bottom)));
+}
+
+.cart-drawer__footer,
+.modal__footer {
+  padding-bottom: max(var(--space-4), calc(var(--space-4) + env(safe-area-inset-bottom)));
+}
